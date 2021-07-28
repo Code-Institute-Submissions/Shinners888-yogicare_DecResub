@@ -1,4 +1,23 @@
+/*font-family: 'Montserrat', sans-serif;
+#FEFBEA - cream
 
+#333333 - charcoal */
 body {
-    background-color: brown;
+    background: url('/media/bear3.jpg') no-repeat center fixed;
+    background-size: cover;
+    background-color: #FEFBEA;
+    height: calc(100vh - 120px);
+    color: #333333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    background-color: #FEFBEA;
+}
+.navbar ul li a, .navbar a {
+    color: #333333;
+}
+.navbarBear {
+    max-height: 50px;
+    padding-right: 20px;
 }
