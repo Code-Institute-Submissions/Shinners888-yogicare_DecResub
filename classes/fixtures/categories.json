@@ -1,0 +1,82 @@
+[
+    {
+      "pk": 1,
+      "model": "classes.category",
+      "fields": {
+        "name": "parent_and_baby",
+        "friendly_name": "Parent & Baby",
+        "image_url": "",
+        "image": ""
+      }
+    },
+    {
+      "pk": 2,
+      "model": "classes.category",
+      "fields": {
+        "name": "parent_and_toddler",
+        "friendly_name": "Parent & Toddler",
+        "image_url": "",
+        "image": ""
+      }
+    },
+    {
+      "pk": 3,
+      "model": "classes.category",
+      "fields": {
+        "name": "kids_5_8",
+        "friendly_name": "Kids 5 to 8",
+        "image_url": "",
+        "image": ""
+      }
+    },
+    {
+      "pk": 4,
+      "model": "classes.category",
+      "fields": {
+        "name": "kids_9_12",
+        "friendly_name": "Kids 9 to 12",
+        "image_url": "",
+        "image": ""
+      }
+    },
+    {
+      "pk": 5,
+      "model": "classes.category",
+      "fields": {
+        "name": "teens",
+        "friendly_name": "Teens",
+        "image_url": "",
+        "image": ""
+      }
+    },
+    {
+      "pk": 6,
+      "model": "classes.category",
+      "fields": {
+        "name": "adults",
+        "friendly_name": "Adults",
+        "image_url": "",
+        "image": ""
+      }
+    },
+    {
+      "pk": 7,
+      "model": "classes.category",
+      "fields": {
+        "name": "lamaze_yoga",
+        "friendly_name": "Lamaze Yoga",
+        "image_url": "",
+        "image": ""
+      }
+    },
+  {
+      "pk": 8,
+      "model": "classes.category",
+      "fields": {
+        "name": "passes",
+        "friendly_name": "Passes",
+        "image_url": "",
+        "image": ""
+      }
+    }
+]

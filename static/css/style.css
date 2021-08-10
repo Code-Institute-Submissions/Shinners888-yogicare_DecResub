@@ -3,12 +3,22 @@
 
 #333333 - charcoal */
 body {
-    background: url('/media/bear3.jpg') no-repeat center fixed;
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position-x: center;
     background-color: #FEFBEA;
-    height: calc(100vh - 120px);
+    height: 100vh;
     color: #333333;
     font-family: 'Montserrat', sans-serif;
+}
+.overlay1 {
+    height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+    background: linear-gradient(135deg, rgba(254,251,234,0.8) 50%, transparent 70%);
+    z-index: 1;
 }
 
 .navbar {
@@ -20,4 +30,13 @@ body {
 .navbarBear {
     max-height: 50px;
     padding-right: 20px;
+}
+
+.navbar-container {
+    padding-top: 80px;
+}
+@media (min-width: 992px) {
+.overlay1 {
+    background: linear-gradient(90deg, rgba(254,251,234,0.8) 33%, transparent 50%);
+}
 }
