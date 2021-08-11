@@ -34,7 +34,7 @@
     <title>Yogi Care {% block extra_title %}{% endblock %}</title>
 </head>
 <body>
-    <header class="container-fluid fixed-top px-0">
+    <header class="container-fluid fixed-top px-0 mb-3">
         <nav class="navbar navbar-expand-lg navbar-light container-fluid">
             <div class="container-fluid">
                 <img src="/media/bearsvg.svg" class="navbarBear">
@@ -67,6 +67,7 @@
             </div>
           </nav>
     </header>
+    
     {% if messages %}
     {% endif %}
 
@@ -79,33 +80,35 @@
     {% endblock %}
 
     {% block postloadjs %}
-    <script>
+    <!-- <script>
       var images = [
       'babyfeet.jpg',
       'bear1.jpg',
       'bear2.jpg',
-      'bear3.jpg',
-      'bear4.jpg',
+      'womanpinkmat.jpg',
+      'womanhoop.jpg',
       'bear2.jpg'
     ]
         var index = 0;
 
         $(function () {
         var i = 0;
-        $("body").css("background-image", "url(/media/" + images[i] + ")");
+        $("#bodyImage").css("background-image", "url(/media/" + images[i] + ")");
         setInterval(function () {
             i++;
             if (i == images.length) {
                 i = 0;
             }
-            $("body").fadeOut("fast", function () {
+            $("#bodyImage").fadeOut("slow", function () {
                 $(this).css("background-image", "url(/media/" + images[i] + ")");
-                $(this).fadeIn("fast");
+                $(this).fadeIn("slow");
             });
+            let x = 5;
         }, 5000);
     });
-      </script>
+      </script> -->
     {% endblock %}
   
 </body>
+<footer id="footer">This is a footer</footer>
 </html>
