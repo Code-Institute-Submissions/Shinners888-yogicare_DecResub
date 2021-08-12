@@ -14,7 +14,7 @@ body {
     color: #333333;
     font-family: 'Montserrat', sans-serif;
     background-color: #FEFBEA;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 60px);
 }
 
 #footer {
