@@ -1,0 +1,45 @@
+[
+    {
+      "pk": 1,
+      "model": "shop.items",
+      "fields": {
+        "name": "resistance_bands",
+        "friendly_name": "Resistance Bands",
+        "price": "",
+        "colours": "true",
+        "image": ""
+      }
+    },
+    {
+      "pk": 2,
+      "model": "shop.items",
+      "fields": {
+        "name": "hoops",
+        "friendly_name": "Hula Hoops",
+        "price": "",
+        "colours": "false",
+        "image": ""
+      }
+    },
+    {
+      "pk": 3,
+      "model": "shop.items",
+      "fields": {
+        "name": "kids_5_8",
+        "friendly_name": "Kids 5 to 8",
+        "image_url": "",
+        "image": ""
+      }
+    },
+    {
+      "pk": 4,
+      "model": "shop.items",
+      "fields": {
+        "name": "mats",
+        "friendly_name": "Yoga Mats",
+        "price": "",
+        "colours": "true",
+        "image": ""
+      }
+    }
+]

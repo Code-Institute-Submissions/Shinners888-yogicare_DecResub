@@ -13,6 +13,15 @@ Teddy on white background - Photo by <a href="https://unsplash.com/@barrettward?
 Teddy with Trees - Photo by <a href="https://unsplash.com/@sanateddy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Oxana Lyashenko</a> on <a href="https://unsplash.com/s/photos/teddy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
 Teddy on Wooden Bridge - Photo by <a href="https://unsplash.com/@murrrchalla?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Marina Shatskih</a> on <a href="https://unsplash.com/s/photos/teddy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Photo by <a href="https://unsplash.com/@cocoachoa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">ARA CHO</a> on <a href="https://unsplash.com/s/photos/yoga?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+Photo by <a href="https://unsplash.com/@jareddrice?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jared Rice</a> on <a href="https://unsplash.com/s/photos/yoga?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+Photo by <a href="https://unsplash.com/@scottwebb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Scott Webb</a> on <a href="https://unsplash.com/s/photos/yoga?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+Photo by <a href="https://unsplash.com/@frozen_warmth?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">William Farlow</a> on <a href="https://unsplash.com/s/photos/yoga?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
   
 [SVG Repo](https://www.svgrepo.com/)
   
