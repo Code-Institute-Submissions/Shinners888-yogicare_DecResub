@@ -1,7 +1,7 @@
 [
     {
       "pk": 1,
-      "model": "shop.items",
+      "model": "items",
       "fields": {
         "name": "resistance_bands",
         "friendly_name": "Resistance Bands",
@@ -23,16 +23,6 @@
     },
     {
       "pk": 3,
-      "model": "shop.items",
-      "fields": {
-        "name": "kids_5_8",
-        "friendly_name": "Kids 5 to 8",
-        "image_url": "",
-        "image": ""
-      }
-    },
-    {
-      "pk": 4,
       "model": "shop.items",
       "fields": {
         "name": "mats",
