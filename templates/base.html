@@ -51,7 +51,7 @@
                   </li>
                   {% if request.user.is_authenticated %}
                   <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">My Cart</a>
+                    <a class="nav-link" href="{% url 'shopping_bag' %}">My Cart</a>
                   </li>
                   {% else %}
                   <li class="nav-item">
