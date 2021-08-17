@@ -40,7 +40,7 @@ body {
 	top: 0;
 	left: 0;
 	position: fixed;
-    background-color: rgba(254,251,234,0.8);
+    background-color: rgba(254,251,234,0.9);
     z-index: -1;
 }
 
@@ -63,6 +63,9 @@ body {
 }
 .card {
     margin: 10px 0;
+}
+.card-body {
+    background: #FEFBEA;
 }
 @media (min-width: 992px) {
     body {

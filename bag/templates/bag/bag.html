@@ -10,6 +10,30 @@
 {% endblock %}
 {% block content %}
 <div class="overlay2">
+</div>
 
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h2 class="center">Cart</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {% if bag_items %}
+                <div></div>
+            {% else %}
+                <p class="lead mb-5">There is nothing in your cart</p>
+                <a href="{% url 'items' %}" class="btn btn-outline-green">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span>Keep Shopping</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock %}
