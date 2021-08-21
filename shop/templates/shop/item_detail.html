@@ -31,8 +31,33 @@
                 <p class="lead mb-0 text-left font-weight-bold">${{ item.price }}</p>
                 <p class="mt-3">{{ item.description }}</p>
         <form class="form" action="{% url 'add_to_bag' item.id %}" method="POST">
-            {% csrf_token %}
+            {% csrf_token %}     
             <div class="form-row">
+                {% if item.colours %}
+                <div class="col-12">
+                    <p><strong>Colour:</strong></p>
+                    <select class="form-control w-50" name="item_size" id='id_item_size'>
+                        {% if item.black %}
+                        <option value="{{ black }}">Black</option>
+                        {% endif %}
+                        {% if item.red %}
+                        <option value="{{ red }}">Red</option>
+                        {% endif %}
+                        {% if item.green %}
+                        <option value="{{ green }}">Green</option>
+                        {% endif %}
+                        {% if item.pink %}
+                        <option value="{{ pink }}">Pink</option>
+                        {% endif %}
+                        {% if item.yellow %}
+                        <option value="{{ yellow }}">Yellow</option>
+                        {% endif %}
+                        {% if item.blue %}
+                        <option value="{{ blue }}">Blue</option>
+                        {% endif %}
+                    </select>
+                </div>
+                {% endif %}
                 <div class="col-12">
                     <p class="mt-3"><strong>Quantity:</strong></p>
                     <div class="form-group w-50">
