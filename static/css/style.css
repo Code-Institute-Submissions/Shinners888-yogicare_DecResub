@@ -80,3 +80,6 @@ body {
         background: linear-gradient(135deg, rgb(254,251,234) 33%, transparent 50%);
 }
 }
+.imageSizing {
+    max-width: 90%;
+}
