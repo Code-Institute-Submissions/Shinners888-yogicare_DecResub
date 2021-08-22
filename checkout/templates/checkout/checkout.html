@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
 {% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
 {% block page_header %}
     <div class="container navbar-container">
         <div class="row">
@@ -48,16 +52,16 @@
             </div>
         </div>
         <div class="col-10 offset-1 col-lg-4 offset-lg-1">
-            <p class="text-muted">Almost there! Please provide details for order and shipping</p>
+            <p class="text-center">Almost there! Please provide details for order and shipping</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="mb-5">
                 {% csrf_token %}
                 <fieldset class="rounded mb-2">
-                    <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                    <legend class="text-bold px-2 w-auto">Details</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                 </fieldset>
                     <fieldset class="rounded mb-2">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                        <legend class="text-bold px-2 w-auto">Delivery</legend>
                         {{ order_form.phone_number | as_crispy_field }}
                         {{ order_form.country | as_crispy_field }}
                         {{ order_form.postcode | as_crispy_field }}
@@ -77,10 +81,10 @@
                         </div>
                     </fieldset>
                     <!--Payment Field Stripe-->
-                <fieldset class="px-3">
-                    <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
-                    <div class="mb-3" id="payment-element"></div>
-                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                <fieldset>
+                    <legend class="text-bold px-2 w-auto">Payment</legend>
+                    <div class="mb-1 py-auto" id="payment-element"></div>
+                    <!--<div class="mb-3 text-danger" id="card-errors" role="alert"></div>-->
                 </fieldset> 
                 <div class="submit-button text-right pb-5 mb-5">                    
                     <a href="{% url 'shopping_bag' %}" class="btn btn-outline-black rounded-0">
