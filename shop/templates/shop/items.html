@@ -18,11 +18,11 @@
             <div class="card">
                 {% if item.image %}
                 <a href="{% url 'item_detail' item.id %}">
-                    <img class="card-img-top img-fluid" src="/media/{{ item.image }}" alt="{{ item.name }}">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ item.image }}" alt="{{ item.name }}">
                 </a>
                 {% else %}
                 <a href="{% url 'item_detail' item.id %}">
-                    <img class="card-img-top img-fluid" src="/media/womanhoop.jpg" alt="{{ item.name }}">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}womanhoop.jpg" alt="{{ item.name }}">
                 </a>
                 {% endif %}
                 <div class="card-body">

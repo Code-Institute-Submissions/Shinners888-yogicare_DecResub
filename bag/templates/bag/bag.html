@@ -38,7 +38,7 @@
                     {% for product in bag_items %}
                         <tr>
                             <td class="p-3 w-25">
-                                <img class="imageSizing" src="/media/{{ product.item.image }}">
+                                <img class="imageSizing" src="{{ MEDIA_URL }}{{ product.item.image }}">
                             </td>
                             <td class="py-3">
                                 <p class="my-0"><strong>{{ product.item.name }}</strong></p>

@@ -48,4 +48,3 @@ def add_classe_to_bag(request, classe_id):
     request.session['bag'] = bag
     print(request.session['bag'])
     return redirect(redirect_url)
-
