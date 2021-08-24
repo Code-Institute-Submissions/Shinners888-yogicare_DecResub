@@ -32,7 +32,7 @@ class Order(models.Model):
     def update_total(self):
         SDP = settings.STANDARD_DELIVERY_PERCENTAGE / 100
         self.order_total = self.orderlines.aggregate(
-                           Sum('orderline_total'))['orderline_total__sum']
+                           Sum('orderline_total'))['orderline_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery_cost = self.order_total * SDP
         else:

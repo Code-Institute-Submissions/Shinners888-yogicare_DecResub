@@ -5,7 +5,7 @@
   height: 38px;
   margin: 2px 0;
   padding: 10px 12px;
-  background-color: #FEFBEA;
+  background-color: rgb(254, 251, 234);
   box-shadow: 0 1px 1px 0 #333333;
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
@@ -35,3 +35,24 @@ select option[value=""] {
     color: #aab7c4 !important;
 }
 
+#loading-overlay {
+	display: none;
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(254, 251, 234 .85);
+    z-index: 20;
+}
+
+.loading-spinner {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+}
+.loading-spinner span i {
+  color: #333333;
+}
