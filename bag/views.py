@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
+
+from shop.models import Item
 
 
 def shopping_bag(request):
@@ -8,6 +11,7 @@ def shopping_bag(request):
 
 def add_to_bag(request, item_id):
 
+    item = Item.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     colour = None
@@ -28,6 +32,7 @@ def add_to_bag(request, item_id):
             bag[item_id] += quantity
         else:
             bag[item_id] = quantity
+            messages.success(request, f'Added {item.name} to your bag')
 
     request.session['bag'] = bag
     print(request.session['bag'])

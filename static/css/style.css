@@ -46,14 +46,12 @@ body {
 
 .navbar {
     background-color: #FEFBEA;
-    margin-bottom: 150px;
 }
 .navbar ul li a, .navbar a {
     color: #333333;
 }
 .navbarBear {
-    max-height: 50px;
-    padding-right: 20px;
+    background: url(/media/bearsvg.svg) no-repeat right fixed;
 }
 .navbar-container {
     padding-top: 80px;
@@ -67,6 +65,17 @@ body {
 .card-body {
     background: #FEFBEA;
 }
+.message-container {
+    position: relative;
+    margin: auto;
+    z-index: 99999999999;
+}
+
+.toastStyle {
+    overflow: visible;
+    background-color: #FEFBEA;
+}
+
 @media (min-width: 992px) {
     body {
         background: url("/media/outdooryoga.jpg") no-repeat right fixed;
@@ -83,3 +92,4 @@ body {
 .imageSizing {
     max-width: 90%;
 }
+
