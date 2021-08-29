@@ -26,7 +26,6 @@ class Item(models.Model):
         red = False
         green = False
         blue = False
-        
 
     def __str__(self):
         return self.name
