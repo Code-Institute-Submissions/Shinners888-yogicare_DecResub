@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 
-from .webhookHandler import StripeWebhookHandler
+from .webhookHandler import StripeWH_Handler
 
 import stripe
 
@@ -31,7 +31,7 @@ def webhook(request):
     except Exception as e:
         return HttpResponse(content=e, status=400)
 
-    handler = StripeWebhookHandler(request)
+    handler = StripeWH_Handler(request)
 
     # Map webhook event to related handler function
     event_map = {

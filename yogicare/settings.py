@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +25,7 @@ SECRET_KEY = 'django-insecure-03@b__7&r(-$^(amp0#g3i!n9*f+x=4y0qz7lojhqsf8s*1fir
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['shinners888-yogicare.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -117,14 +118,19 @@ WSGI_APPLICATION = 'yogicare.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/3.2/ref/settings/#database
+
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
 
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         'default': {
+             'ENGINE': 'django.db.backends.sqlite3',
+             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
         }
-    }
 
 
 # Password validation
