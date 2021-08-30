@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'shop',
     'bag',
     'checkout',
+    'profiles',
     'crispy_forms',
 ]
 
@@ -120,10 +121,10 @@ WSGI_APPLICATION = 'yogicare.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#database
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
+# if 'DATABASE_URL' in os.environ:
+#     DATABASES = {
+#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#     }
 
 DATABASES = {
          'default': {

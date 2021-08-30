@@ -24,8 +24,7 @@ def add_to_bag(request, item_id):
         if item_id in list(bag.keys()):
             if colour in bag[item_id]['items_by_colour'].keys():
                 bag[item_id]['items_by_colour'][colour] += quantity
-                messages.success(request, f'Added {item.colour}'
-                                 f'{item.friendly_name} to bag')
+                messages.success(request, f'Added {item.friendly_name} to bag')
             else:
                 bag[item_id]['items_by_colour'][colour] = quantity
                 messages.success(request, f'{item.friendly_name} added to bag')
