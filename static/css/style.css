@@ -25,6 +25,23 @@ body {
     position: fixed;
     height: 60px;
 }
+.copyright {
+    text-align: left;
+}
+.copyright p {
+    padding: 1em 0 1em 0;
+}
+
+.socialMedia {
+    text-align: right;
+}
+.socialMedia i {
+    font-size: 30px;
+    padding: 15px 10px;
+}
+.socialMedia .fab {
+    color: #333333;
+}
 .overlay1 {
     height: calc(100vh - 60px);
 	width: 100%;
