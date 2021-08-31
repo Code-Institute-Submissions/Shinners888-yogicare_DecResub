@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['yogicare.herokuapp.com', 'localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [
