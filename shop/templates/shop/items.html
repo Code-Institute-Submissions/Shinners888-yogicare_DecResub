@@ -12,6 +12,10 @@
 <div class="overlay2"></div>
 <div class="container-fluid nonHomePageContainer">
     <h1 class="textCharcoal">Our Products</h1>
+    {% if request.user.is_superuser %}
+    <a href="{% url 'add_items' %}" class="textCharcoal">Add Shop Products Here
+      </a>
+      {% endif %}
     <div class="row h-100">
         {% for item in items %}
         <div class="col-10 offset-1 col-md-6 col-lg-3 mx-auto">

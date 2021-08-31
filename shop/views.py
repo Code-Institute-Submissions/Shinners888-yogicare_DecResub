@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.conf import settings
 from .models import Item
+from .forms import itemsForm
 
 
 def all_items(request):
@@ -23,3 +24,13 @@ def item_detail(request, item_id):
     }
 
     return render(request, 'shop/item_detail.html', context)
+
+
+def add_items(request):
+    form = itemsForm()
+    template = 'shop/add_items.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
