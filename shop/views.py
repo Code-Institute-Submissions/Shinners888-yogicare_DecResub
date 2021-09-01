@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404
-from django.conf import settings
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
 from .models import Item
 from .forms import itemsForm
 
@@ -28,9 +28,19 @@ def item_detail(request, item_id):
 
 def add_items(request):
     form = itemsForm()
+    if request.method == 'POST':
+        form = itemsForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('add_items'))
+        else:
+            messages.error(request, 'Error, please check the info is correct')
+    else:
+        form = itemsForm()
+
     template = 'shop/add_items.html'
     context = {
         'form': form,
     }
-
     return render(request, template, context)
