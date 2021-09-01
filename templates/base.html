@@ -16,8 +16,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{% static '/css/style.css' %}">
-        <link rel="icon" type="image/x-icon" href="/media/favicon.ico" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="icon" type="image/x-icon" href="media/favicon.ico" />
     {% endblock %}
     {% block extra_css %}
     {% endblock %}
@@ -112,35 +112,7 @@
     {% block postloadjs %}
     <script type="text/javascript">
       $('.toast').toast('show');
-  </script>
-    <!-- <script>
-      var images = [
-      'babyfeet.jpg',
-      'bear1.jpg',
-      'bear2.jpg',
-      'womanpinkmat.jpg',
-      'womanhoop.jpg',
-      'bear2.jpg'
-    ]
-        var index = 0;
-
-        $(function () {
-        var i = 0;
-        $("#bodyImage").css("background-image", "url(/media/" + images[i] + ")");
-        setInterval(function () {
-            i++;
-            if (i == images.length) {
-                i = 0;
-            }
-            $("#bodyImage").fadeOut("slow", function () {
-                $(this).css("background-image", "url(/media/" + images[i] + ")");
-                $(this).fadeIn("slow");
-            });
-            let x = 5;
-        }, 5000);
-    });
-      </script> -->
-    
+    </script>
     {% endblock %}
   
 </body>
