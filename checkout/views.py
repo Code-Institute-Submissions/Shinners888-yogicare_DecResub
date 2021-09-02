@@ -10,7 +10,7 @@ from .models import Order, OrderLineItems
 from shop.models import Item
 from bag.contexts import bag_contents
 
-from profiles.models import yogiUser
+from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 
 import stripe
@@ -106,7 +106,7 @@ def checkout(request):
 
         if request.user.is_authenticated:
             try:
-                profile = yogiUser.objects.get(user=request.user)
+                profile = UserProfile.objects.get(user=request.user)
                 order_form = OrderForm(initial={
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
@@ -118,7 +118,7 @@ def checkout(request):
                     'street_address2': profile.default_street_address2,
                     'county': profile.default_county,
                 })
-            except yogiUser.DoesNotExist:
+            except UserProfile.DoesNotExist:
                 order_form = OrderForm()
         else:
             order_form = OrderForm()

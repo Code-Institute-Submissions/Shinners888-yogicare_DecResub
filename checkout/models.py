@@ -5,11 +5,11 @@ from django.db.models import Sum
 from django.conf import settings
 
 from shop.models import Item
-from profiles.models import yogiUser
+from profiles.models import UserProfile
 
 
 class Order(models.Model):
-    user_profile = models.ForeignKey(yogiUser, on_delete=models.SET_NULL,
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
                                      related_name='orders')
     order_number = models.CharField(max_length=32, null=False, editable=False)

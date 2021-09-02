@@ -1,10 +1,10 @@
 from django import forms
-from .models import yogiUser
+from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
     class Meta:
-        model = yogiUser
+        model = UserProfile
         exclude = ('user',)
 
     def __init__(self, *args, **kwargs):
