@@ -3,7 +3,7 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 
-from .models import Order, OrderLineItems
+from .models import Order, OrderLineItem
 from shop.models import Item
 from profiles.models import UserProfile
 
@@ -12,7 +12,7 @@ import time
 
 
 class StripeWH_Handler:
-   
+
     def __init__(self, request):
         self.request = request
 
@@ -118,7 +118,7 @@ class StripeWH_Handler:
                 for item_id, item_info in json.loads(bag).items():
                     item = Item.objects.get(id=item_id)
                     if isinstance(item_info, int):
-                        order_line_item = OrderLineItems(
+                        order_line_item = OrderLineItem(
                             order=order,
                             item=item,
                             quantity=item_info,
@@ -126,7 +126,7 @@ class StripeWH_Handler:
                         order_line_item.save()
                     else:
                         for colour, quantity in item_info['items_by_colour'].items():
-                            order_line_item = OrderLineItems(
+                            order_line_item = OrderLineItem(
                                 order=order,
                                 item=item,
                                 quantity=quantity,

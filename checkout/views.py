@@ -1,17 +1,15 @@
-from django.shortcuts import (
-    render, redirect, reverse,
-    get_object_or_404, HttpResponse)
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-from .models import Order, OrderLineItems
-from shop.models import Item
-from bag.contexts import bag_contents
+from .models import Order, OrderLineItem
 
+from shop.models import Item
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
+from bag.contexts import bag_contents
 
 import stripe
 import json
@@ -143,7 +141,7 @@ def checkout_successful(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:
-        profile = yogiUser.objects.get(user=request.user)
+        profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
@@ -176,4 +174,3 @@ def checkout_successful(request, order_number):
     }
 
     return render(request, template, context)
-
