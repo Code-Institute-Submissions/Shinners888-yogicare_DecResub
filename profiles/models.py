@@ -6,9 +6,9 @@ from django.dispatch import receiver
 from django_countries.fields import CountryField
 
 
-class yogiUser(models.Model):
+class UserProfile(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='userprofile')
     default_phone_number = models.CharField(max_length=20, null=True, blank=True)
     default_postcode = models.CharField(max_length=20, null=True, blank=True)
     default_town_or_city = models.CharField(max_length=40, null=True, blank=True)
@@ -25,5 +25,5 @@ class yogiUser(models.Model):
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     # New or Existing
     if created:
-        yogiUser.objects.create(user=instance)
+        UserProfile.objects.create(user=instance)
     instance.userprofile.save()

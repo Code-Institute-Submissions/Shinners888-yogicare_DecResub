@@ -5,7 +5,7 @@ from django.conf import settings
 
 from .models import Order, OrderLineItems
 from shop.models import Item
-from profiles.models import yogiUser
+from profiles.models import UserProfile
 
 import json
 import time
@@ -59,7 +59,7 @@ class StripeWH_Handler:
         profile = None
         username = intent.metadata.username
         if username != 'AnonymousUser':
-            profile = yogiUser.objects.get(user__username=username)
+            profile = UserProfile.objects.get(user__username=username)
             if save_info:
                 profile.default_phone_number = shipping_details.phone
                 profile.default_country = shipping_details.address.country
