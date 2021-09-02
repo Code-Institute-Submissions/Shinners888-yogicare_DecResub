@@ -90,8 +90,12 @@ body {
 
 .toastStyle {
     overflow: visible;
-    background-color: #FEFBEA;
 }
+.toast-header, .toast-body {
+    background-color: #333333;
+    color:#FEFBEA;
+}
+
 @media (max-width: 992px) {
 .navbar .navbar-nav {
     display: inline-block;
@@ -123,4 +127,9 @@ body {
 
 .table-responsive {
     margin-bottom: 60px;
+}
+.freeDelivery {
+    background:linear-gradient(90deg, transparent 5%, rgba(51,51,51, 0.8) 10%, rgba(51,51,51, 1) 50%,rgba(51,51,51, 0.8) 90%, transparent 95%);
+    color: #FEFBEA;
+    text-align: center;
 }
