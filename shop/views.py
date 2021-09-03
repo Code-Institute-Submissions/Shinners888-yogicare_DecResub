@@ -58,29 +58,6 @@ def add_items(request):
     return render(request, template, context)
 
 
-def edit_item(request, item_id):
-    item = get_object_or_404(Item, pk=item_id)
-    if request.method == 'POST':
-        form = itemsForm(request.POST, request.FILES, instance=item)
-        if form.is_valid():
-            item = form.save()
-            messages.success(request, 'Item details changed!')
-            return redirect(reverse('item_detail', args=[item.id]))
-        else:
-            messages.error(request, 'Check details.')
-    else:
-        form = itemsForm(instance=item)
-        messages.info(request, f'You are editing {item.name}')
-
-    template = 'shop/edit_item.html'
-    context = {
-        'form': form,
-        'item': item,
-    }
-
-    return render(request, template, context)
-
-
 def delete_item(request, item_id):
     item = get_object_or_404(Item, pk=item_id)
     item.delete()
