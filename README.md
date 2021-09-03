@@ -1,45 +1,60 @@
-install django, allauth, allauth templates, create base.html, `python3 manage.py startapp home`, `mkdir home/templates/home`
-create index.html
+## UX
 
-Stones Tower - Photo by <a href="https://unsplash.com/@omeganova?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Deniz Altindas</a> on <a href="https://unsplash.com/s/photos/yoga?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+### User Stories:
+Visitor
+- I want to be able to view the site on any device.
+- I want to be able to register to the site.
+- I want to be able to view available class and shop prices.
+- I want to have the ability to see the social media for the business
 
-Person Holding Babies Feet - Photo by <a href="https://unsplash.com/@designshot?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Danijel Durkovic</a> on <a href="https://unsplash.com/s/photos/baby-yoga?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+Registered User:
+- I want to be able to log in/out with my registered details.
+- I want to be able to view the Community Forum posts and interact and comment on same.
+- I want to be able to view my Cart and any items I currently have awaiting payment in my Cart.
+- I want to be able to add edit and remove items from my cart.
 
-Teddy In Field - Photo by <a href="https://unsplash.com/@alexb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alex Blăjan</a> on <a href="https://unsplash.com/s/photos/teddy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+Application Owner/Administrator User:
+- I want easy login to manage the site
+- I want to have the ability to edit add and delete new classes and shop items
+- I want to be able to view orders
 
-Teddy on white background - Photo by <a href="https://unsplash.com/@barrettward?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Barrett Ward</a> on <a href="https://unsplash.com/s/photos/teddy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-Teddy with Trees - Photo by <a href="https://unsplash.com/@sanateddy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Oxana Lyashenko</a> on <a href="https://unsplash.com/s/photos/teddy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-Teddy on Wooden Bridge - Photo by <a href="https://unsplash.com/@murrrchalla?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Marina Shatskih</a> on <a href="https://unsplash.com/s/photos/teddy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-Meditation Sepia Photo by <a href="https://unsplash.com/@jareddrice?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jared Rice</a> on <a href="https://unsplash.com/s/photos/yoga?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-Succulent Plant Photo by <a href="https://unsplash.com/@scottwebb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Scott Webb</a> on <a href="https://unsplash.com/s/photos/yoga?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-Female Silhouette Sunset Photo by <a href="https://unsplash.com/@frozen_warmth?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">William Farlow</a> on <a href="https://unsplash.com/s/photos/yoga?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-Female Stretching Back Photo by <a href="https://unsplash.com/@dane_aw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dane Wetton</a> on <a href="https://unsplash.com/s/photos/yoga-studio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-Female Silhouette Sunrise Photo by <a href="https://unsplash.com/@wesleyphotography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Wesley Tingey</a> on <a href="https://unsplash.com/s/photos/yoga-studio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-Water Droplet Photo by <a href="https://unsplash.com/@error420?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">ERROR 420 📷</a> on <a href="https://unsplash.com/s/photos/zen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-Buddha Photo by <a href="https://unsplash.com/@tibine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sabine Schulte</a> on <a href="https://unsplash.com/s/photos/zen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-Flower Photo by <a href="https://unsplash.com/@chris_papaux?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christian Papaux</a> on <a href="https://unsplash.com/s/photos/zen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+### Visual
+The colour scheme is cream and charcoal. These are calm but well-contrasted colours. There is a cream transparent overlay over a background image covering 100% viewheight. The background image changes for small devices.
+
+The background image disappears for the checkout/checkout-success pages.
+
+The font throughout the site is Montserrat.
+
+
+# Technologies Used
+
+- HTML, CSS, JS & Python - Languages
+- Django - Project Framework framework.
+- [Bootstrap](https://getbootstrap.com/) CSS Framework, JQuery and JS
+- [Github](https://github.com/) (Gitpod) - Repository and development/version control
+- [Heroku] - To deploy application
+- - Postgres via Heroku
+- [PEP 8 Online Validator](http://pep8online.com/)
+- [W3C Schools Validators](https://validator.w3.org/nu/)
+- [Stripe](https://www.stripe.com/)
+- [Amazon Web Services](https://aws.amazon.com/console/)
+---
+- [Font Awesome](https://fontawesome.com/)
+- [Favicon.ico](https://www.favicon.cc/)
+- [Unsplash](https://unsplash.com/)
+- [Stocksnap.io](https://stocksnap.io/)
+
+
+# Deployment
+
+
+## Media
+
+Images from [Unsplash](https://unsplash.com/) and [Stocksnap.io](https://stocksnap.io/)
   
 [Image Missing](https://icon-library.com/icon/no-picture-available-icon-1.html)
 
 [SVG Repo](https://www.svgrepo.com/)
   
-[clipartmax](https://www.clipartmax.com/so/bear-clipart/)  
+[Clipartmax](https://www.clipartmax.com/so/bear-clipart/)  
 
-#fcef91 - yellow
-
-#d9f4ed - green
-
-#FEFBEA - cream
-
-#333333 - charcoal
