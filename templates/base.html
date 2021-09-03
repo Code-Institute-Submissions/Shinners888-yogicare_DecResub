@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     {% endblock %}
@@ -45,9 +45,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'classes' %}">Classes</a>
-                  </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'items' %}">Shop</a>
                   </li>
@@ -114,20 +111,21 @@
       $('.toast').toast('show');
     </script>
     {% endblock %}
+    <footer id="footer" class="container-fluid">
+        <div class="row">
+            <div class="col-6 copyright">
+                <p>
+                    <small><i class="far fa-copyright"></i> Yogicare</small>
+                </p>
+            </div>
+            <div class="col-6 socialMedia">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fab fa-instagram-square"></i></a>
+                <a href="https://www.twitter.com/" target="_blank" rel="noopener"><i class="fab fa-twitter-square"></i></a>
+            </div>
+        </div>
+      </footer>
   
 </body>
-<footer id="footer" class="container-fluid">
-  <div class="row">
-      <div class="col-6 copyright">
-          <p>
-              <small><i class="far fa-copyright"></i> Yogicare</small>
-          </p>
-      </div>
-      <div class="col-6 socialMedia">
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook-square"></i></a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fab fa-instagram-square"></i></a>
-          <a href="https://www.twitter.com/" target="_blank" rel="noopener"><i class="fab fa-twitter-square"></i></a>
-      </div>
-  </div>
-</footer>
+
 </html>
