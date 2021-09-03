@@ -70,7 +70,7 @@ body {
 .searchButton {
     box-sizing: border-box;
     background-color: #FEFBEA;
-    box-shadow: 0 1px 1px 0 #333333;
+    box-shadow: 0 1px 2px 0 #333333;
 }
 .searchButton:hover {
     background-color: #333333;
