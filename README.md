@@ -50,7 +50,7 @@ The font throughout the site is Montserrat.
 
 # Creation and Bugs
 
-This site is modelled on the Boutique Ado Walkthrough site. 
+This site is modelled on the Boutique Ado Walkthrough site. In particular throughout the views, models and layout. 
 
 Apps:
 - Home
@@ -67,9 +67,9 @@ Remaining bugs include:
 - Subtotal and quantity not displaying properly in bag template or successful checkout template.
 - Search bar not working outside development environment.
 
-While some bugs were fixed in time, in particular, migration issues with the Postgres Database and webhook handler issues, many still would not work and were cuasing sitewide bugs.
+While some bugs were fixed in time, in particular, migration issues with the Postgres Database and webhook handler issues, many still would not work and were causing sitewide bugs. As such, many of the user stories I wished to manage have not been successful.
 
-Future updates to include:
+## Future updates to include:
 Classes and categories of classes. 
 A review section in each class only to be modified by people who have purchased that class.
 Fixing the items_by_colour bug
