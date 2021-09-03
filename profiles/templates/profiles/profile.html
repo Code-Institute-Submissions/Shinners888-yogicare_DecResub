@@ -34,7 +34,13 @@
         </div>
             <div class="row">
                 <div class="col-12 col-md-4">
-                    
+                    {% for order in orders %}
+                        <div class="col-6">{{ order.date }}</div>
+                        {% for product in order.lineitems.all %}
+                        <div class="col-6">
+                            <a href="#" target="_blank">{{ product.classe.friendly_name }}</a></div>
+                        {% endfor %}
+                        {% endfor %}
                 </div>
                 <div class="col-12 col-lg-4">
                     <div class="row">

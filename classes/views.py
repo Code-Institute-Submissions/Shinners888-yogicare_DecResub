@@ -35,7 +35,7 @@ def add_classe(request):
             messages.success(request, 'Class Added!')
             return redirect(reverse('add_classe'))
         else:
-            messages.error(request, 'Oops! Something in your form is incorrect')
+            messages.error(request, 'Oops! There is an error in your form')
     else:
         form = classeForm()
 

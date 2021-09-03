@@ -15,8 +15,9 @@ def all_items(request):
             if not query:
                 messages.error(request, "What are you looking for?")
                 return redirect(reverse('items'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = Q(name__icontains=query) |\
+                Q(description__icontains=query)
             items = items.filter(queries)
 
     context = {
