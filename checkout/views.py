@@ -57,7 +57,7 @@ def checkout(request):
                 try:
                     item = Item.objects.get(id=item_id)
                     if isinstance(item_info, int):
-                        order_line_item = OrderLineItems(
+                        order_line_item = OrderLineItem(
                             order=order,
                             item=item,
                             quantity=item_info,
@@ -66,7 +66,7 @@ def checkout(request):
                     else:
                         for colour, quantity in item_info[
                                     'items_by_colour'].items():
-                            order_line_item = OrderLineItems(
+                            order_line_item = OrderLineItem(
                                 order=order,
                                 item=item,
                                 quantity=quantity,
@@ -90,7 +90,8 @@ def checkout(request):
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request,
+                           "There's nothing in your bag at the moment")
             return redirect(reverse('items'))
 
         current_bag = bag_contents(request)

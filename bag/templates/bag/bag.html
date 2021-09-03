@@ -45,9 +45,15 @@
 
                     {% for product in bag_items %}
                         <tr>
+                            {% if product.item.image %}
                             <td class="p-3 w-25">
-                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}{{ product.item.image }}">
+                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}{{ product.item.image }}" alt="{{ product.item.name }}">
                             </td>
+                            {% else %}
+                            <td class="p-3 w-25">
+                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}imagenotavailable.png" alt="{{ product.item.name }}">
+                            </td>
+                            {% endif %}
                             <td class="py-3">
                                 <p class="my-0"><strong>{% if product.item.colours %}{{ product.colour|upper }}{% endif %}</strong></p>
                                 
