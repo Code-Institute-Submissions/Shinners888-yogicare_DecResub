@@ -126,8 +126,15 @@ body {
         background: linear-gradient(135deg, rgb(254,251,234) 33%, transparent 50%);
 }
 }
+.productInfo {
+    height: 100px;
+}
+.productImage {
+    height: 200px;
+}
 .imageSizing {
-    max-width: 100px;
+    margin-top: 40px;
+    max-width: 400px;
     border-radius: 5px;
 }
 

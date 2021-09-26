@@ -18,7 +18,7 @@
         </small>
     {% endif %}
     <div class="row h-100">
-        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
             {% if item.image %}
                 <a href="{% url 'item_detail' item.id %}">
                     <img class="imageSizing" src="{{ MEDIA_URL }}{{ item.image }}" alt="{{ item.name }}">
@@ -30,7 +30,7 @@
                 {% endif %}
         </div>
         
-        <div class="col-12 col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-3 offset-lg-1">
             <div>
                 <p class="mb-0">{{ item.friendly_name }}</p>
                 <p class="lead mb-0 text-left font-weight-bold">${{ item.price }}</p>
