@@ -8,18 +8,6 @@ from django.db.models import Q
 def all_items(request):
 
     items = Item.objects.all()
-    query = None
-    if request.GET:
-        if 'q' in request.GET:
-            query = request.GET['q']
-            if not query:
-                messages.error(request, "What are you looking for?")
-                return redirect(reverse('items'))
-
-            queries = Q(name__icontains=query) |\
-                Q(description__icontains=query)
-            items = items.filter(queries)
-
     context = {
         'items': items,
     }
