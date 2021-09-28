@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from .models import Item
 from .forms import itemsForm
-from django.db.models import Q
 
 
 def all_items(request):
