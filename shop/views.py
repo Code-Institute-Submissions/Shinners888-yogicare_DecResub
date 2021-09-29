@@ -60,7 +60,7 @@ def edit_item(request, item_id):
             messages.success(request, 'Successfully changed item!')
             return redirect(reverse('item_detail', args=[item.id]))
         else:
-            messages.error(request, 'Something went wrong, please check information.')
+            messages.error(request, 'Something went wrong, please try again.')
     else:
         form = itemsForm(instance=item)
         messages.info(request, f'You are editing {item.friendly_name}')

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load bag_tools %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
@@ -28,8 +29,8 @@
                 <div class="row">
                     <div class="col-6 offset-1 text-uppercase">
                         <p class="my-0"><strong>{{ product.item.friendly_name }}</strong></p>
-                        <p class="my-0">Colour: {% if product.item.colours %}{{ item.colour }}{% else %}N/A{% endif %}</p>
-                        <p class="my-0">Qty: {{ item.quantity }}</p>
+                        <p class="my-0">Colour: {% if product.item.colours %}{{ product.colour }}{% else %}N/A{% endif %}</p>
+                        <p class="my-0">Qty: {{ product.quantity }}</p>
                     </div>
                     <div class="col-5">
                         <p class="my-0">${{ product.item.price }}</p>
