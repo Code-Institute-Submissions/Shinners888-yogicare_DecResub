@@ -8,8 +8,8 @@
 ### User Stories:
 Visitor
 - I want to be able to view the site on any device.
-- I want to be able to register to the site.
-- I want to be able to view available class and shop prices.
+- I want to be able to register to the site to save details for a faster checkout.
+- I want to be able to view and purchase available items as a guest.
 - I want to have the ability to see the social media for the business
 
 Registered User:
@@ -19,7 +19,7 @@ Registered User:
 
 Application Owner/Administrator User:
 - I want easy login to manage the site
-- I want to have the ability to edit add and delete new classes and shop items
+- I want to have the ability to edit add and delete new items
 - I want to be able to view orders
 
 ### Visual
@@ -69,11 +69,31 @@ Remaining bugs include:
 
 While some bugs were fixed in time, in particular, migration issues with the Postgres Database and webhook handler issues, many still would not work and were causing sitewide bugs. As such, many of the user stories I wished to manage have not been successful.
 
+## Testing
+
+- The visitor lands on the home page. They can browse the website as an unregistered user and avail of the products offered. They can make a purchase as a guest but will not have an account with the company for faster use of the website in future.
+
+- The navbar provides easy movement through the site. The visitor can navigate to the shop page where they will find items for sale. They can click on items of interest and add to cart. Some items have colour options. These are in a dropdown menu that the user can choose from. Once all items needed are in the bag, the user can navigate to their cart in the top right of the navbar. Once in the cart, there are bugs. If multiple colours of an item are in the cart, adjusting any of these results in other colours being eliminated completely.
+
+- Otherwise, the user has the option of navigating to the checkout and purchasing as a guest. There is an option to register/login to save information on the site. The user will be required to use their email to purchase and will receive a confirmation email once the order is complete. To test this, I used the number 4242 4242 4242 4242 with any future date and any 5 digit number for the card details.
+
+- They user will receive their order confirmation within the site straight away, with the order number for reference.
+
+---
+- To register to the site, you need an email address, a username and a password. Once entered, you will receive an email to your provided email address with a link to verify your details. This may take a few minutes, but then you are a verified user. You can view previous purchases and check out faster.
+
+---
+- As admin, you have the added option of adding, editing and deleting items from the store. On th eshop page, an option to add a new item will be under the heading. You can enter all required details about new products which will then display in the shop for all users. 
+
+- To edit or delete an existing item, click on the item, and the edit/delete buttons will be below the item name.
+
+- The bag and checkout bugs exist for all site users. It is still possible to make your purchase, and the items will show up perfectly in the order summary, provided no adjustments have been made to items of varied colours within the bag app. The admin will be able to see this too.
+
+
 ## Future updates to include:
 Classes and categories of classes. 
 A review section in each class only to be modified by people who have purchased that class.
-Fixing the items_by_colour bug
-Fixing the search bug.
+Fixing the items_by_colour bug.
 Fixing the order total/subtotal bug.
 
 

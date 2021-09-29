@@ -97,7 +97,11 @@
                         <span class="icon">
                             <i class="far fa-check-square"></i>
                         </span>
+                        {% if request.user.is_authenticated %}
                         <span class="font-weight-bold">Complete Order</span></u>
+                        {% else %}
+                        <span class="font-weight-bold">Checkout as Guest</span></u>
+                        {% endif %}
                     </button>
                     <p>
                         <span class="icon">
