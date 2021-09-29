@@ -14,6 +14,7 @@
     <h1 class="textCharcoal">{{ item.friendly_name }}</h1>
     {% if request.user.is_superuser %}
         <small class="ml-3 textCharcoal"> 
+            <a class="textCharcoal" href="{% url 'edit_item' item.id %}">Update Item Details</a>
             <a class="textCharcoal" href="{% url 'delete_item' item.id %}">Delete</a>
         </small>
     {% endif %}
