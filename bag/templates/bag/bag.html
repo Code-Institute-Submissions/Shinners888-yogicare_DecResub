@@ -95,7 +95,7 @@
                                     </div>
                                 </form>
                                 <a class="update-link text-info"><small>Update</small></a>
-                                <a class="remove-item text-danger float-right" id="remove_{{ product.item_id }}" data-item-colour="{{ item.colour }}">Delete</a>
+                                <a class="remove-item text-danger" id="remove_{{ product.item_id }}" data-item-colour="{{ item.colour }}">Delete</a>
                             </td>
                             <td class="py-3">
                                 <p class="my-0">${{ product.item.price | calc_subtotal:product.quantity }}</p>

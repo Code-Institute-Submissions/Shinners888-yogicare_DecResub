@@ -24,19 +24,21 @@ def add_to_bag(request, item_id):
         if item_id in list(bag.keys()):
             if colour in bag[item_id]['items_by_colour'].keys():
                 bag[item_id]['items_by_colour'][colour] += quantity
-                messages.success(request, f'Added {item.friendly_name} to bag')
+                messages.success(request, 'Added to bag')
             else:
                 bag[item_id]['items_by_colour'][colour] = quantity
-                messages.success(request, f'{item.friendly_name} added to bag')
+                messages.success(request, 'Added to bag')
         else:
             bag[item_id] = {'items_by_colour': {colour: quantity}}
+            messages.success(request, 'Added to bag'))
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
-            messages.success(request, 'Added to bag')
+            messages.success(request,
+                             f'{item.name} updated in bag')
         else:
             bag[item_id] = quantity
-            messages.success(request, 'Added to bag')
+            messages.success(request, f'{item.name} updated in bag')
 
     request.session['bag'] = bag
     print(request.session['bag'])
@@ -68,9 +70,10 @@ def adjust_bag(request, item_id):
         else:
             bag.pop(item_id)
             messages.success(request, f'{item.name} updated in bag')
-
+    
     request.session['bag'] = bag
     return redirect(reverse('shopping_bag'))
+    
 
 
 def remove_from_bag(request, item_id):

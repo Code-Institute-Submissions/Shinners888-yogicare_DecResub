@@ -101,7 +101,10 @@ body {
     background-color: #333333;
     color:#FEFBEA;
 }
-
+.update-link, .remove-item {
+    padding-left: 10%;
+    cursor: pointer;
+}
 @media (max-width: 992px) {
 .navbar .navbar-nav {
     display: inline-block;
