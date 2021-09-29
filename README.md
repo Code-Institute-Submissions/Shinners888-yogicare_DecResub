@@ -204,6 +204,24 @@ In settings.py
 In Heroku, remove DISABLE_COLLECTSTATIC as a variable. 
 
 Add commit and push project from Gitpod (or your IDE). The app should now have the static files and media available on the web service.
+
+## Cloning the repository
+
+- Go to the [Repository](https://github.com/Shinners888/yogicare).
+
+- Click the green button located above the files.
+
+- Click the "clipboard icon" to the right of the Git URL to get the clone URL.
+
+- Open your IDE terminal window.
+
+- Change the directory to where you want to clone the repository.
+
+- Paste the URL and click OK
+
+- Create an env.py file (or set environment variables if preferred), with the settings to match the config vars above. Remember to send to .gitignore to keep sensitive information private.
+
+
 ## Media and Credits
 
 Images from [Unsplash](https://unsplash.com/) and [Stocksnap.io](https://stocksnap.io/)
