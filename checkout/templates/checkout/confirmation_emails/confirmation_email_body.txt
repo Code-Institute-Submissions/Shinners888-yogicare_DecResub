@@ -1,4 +1,4 @@
-Hello {{ order.full_name ))!
+Hello {{ order.full_name }}!
 
 This is a confirmation of your yogicare order. You'll be notified when your products have been dispatched. 
 Please keep an eye on your email for tracking updates. 
