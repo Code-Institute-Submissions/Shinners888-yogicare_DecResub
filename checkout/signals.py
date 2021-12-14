@@ -8,6 +8,8 @@ from .models import OrderLineItem
 def update_on_save(sender, instance, created, **kwargs):
 
     instance.order.update_total()
+    print('signal')
+    print('update_on_save')
 
 
 @receiver(post_delete, sender=OrderLineItem, weak=False)
