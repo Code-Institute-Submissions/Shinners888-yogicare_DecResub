@@ -24,6 +24,7 @@ body {
     width: 100%;
     position: fixed;
     height: 60px;
+    margin-top: 80px;
 }
 .copyright {
     text-align: left;
@@ -105,16 +106,34 @@ body {
     padding-left: 10%;
     cursor: pointer;
 }
-@media (max-width: 992px) {
-.navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-    vertical-align: top;
-  }
-  
-  .navbar .navbar-collapse {
+
+.productInfo {
+    height: 100px;
+}
+.productImage {
+    height: 200px;
+}
+.imageContainer {
+    display: flex;
+    justify-content: center;
+}
+.imageSizing {
+    margin-top: 20px;
+    max-width: 200px;
+    border-radius: 5px;
+}
+.table-responsive {
+    margin-bottom: 60px;
+}
+.freeDelivery {
+    background:linear-gradient(90deg, transparent 5%, rgba(51,51,51, 0.8) 10%, rgba(51,51,51, 1) 50%,rgba(51,51,51, 0.8) 90%, transparent 95%);
+    color: #FEFBEA;
     text-align: center;
-  }
+}
+@media (min-width: 587px) {
+    .imageSizing {
+        max-width: 300px;
+    }
 }
 @media (min-width: 992px) {
     body {
@@ -124,28 +143,25 @@ body {
         font-family: 'Montserrat', sans-serif;
         background-color: #FEFBEA;
         height: calc(100vh - 100px);
-     }
+    }
     .overlay1 {
         background: linear-gradient(135deg, rgb(254,251,234) 33%, transparent 50%);
-}
-}
-.productInfo {
-    height: 100px;
-}
-.productImage {
-    height: 200px;
-}
-.imageSizing {
-    margin-top: 40px;
-    max-width: 400px;
-    border-radius: 5px;
+    }
+    .imageSizing {
+        margin-top: 40px;
+        max-width: 400px;
+        border-radius: 5px;
+    }
 }
 
-.table-responsive {
-    margin-bottom: 60px;
-}
-.freeDelivery {
-    background:linear-gradient(90deg, transparent 5%, rgba(51,51,51, 0.8) 10%, rgba(51,51,51, 1) 50%,rgba(51,51,51, 0.8) 90%, transparent 95%);
-    color: #FEFBEA;
-    text-align: center;
-}
+@media (max-width: 992px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+      }
+      
+      .navbar .navbar-collapse {
+        text-align: center;
+      }
+    }
