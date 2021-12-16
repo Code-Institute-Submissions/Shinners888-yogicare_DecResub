@@ -54,14 +54,14 @@
                     </div>
 
                     <div class="row">
-                        <div class="col">
+                        <div class="col-12 col-md-4">
                             <small class="text-muted font-weight-bold"><u>Order Details</u></small>
                         </div>
-                    </div>
+                    
 
                     {% for product in order.lineitems.all %}
-                    <div class="row">
-                        <div class="col-12 col-md-4">
+                    
+                        <div class="col-12 col-md-8">
                             <p class="small mb-0 text-black font-weight-bold">
                                 {{ product.item.friendly_name }}
                                 {% if product.item.colours %} ({{ product.item_colour|upper }})
