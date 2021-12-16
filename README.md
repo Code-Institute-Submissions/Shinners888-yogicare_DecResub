@@ -60,12 +60,19 @@ Apps:
 - Checkout
 
 
-
 Due to significant bugs in the development process, the 'classes' app had to be removed at deployment.
 Remaining bugs include:
-- Colours vs items in bag. Items with colour options are not functionally specified in the cart.
-- Subtotal and quantity not displaying properly in bag template or successful checkout template.
-- Search bar not working outside development environment.
+- Colours vs items in bag. Items with colour options are not functionally specified in the cart. - Solved
+- Subtotal and quantity not displaying properly in bag template or successful checkout template. - Solved
+- Search bar not working outside development environment. - Removed
+
+- An unnoted bug in the last submission of the project was that upon payment in the deployed app, the app was returning an error 500. At first this appeared to be a browser issue as not everyone was experiencing the issue, and the issue did not happen in the development version. Various issues played a role in this. I had failed to note that one of my webhooks was failing. This was partially due to the fact that the checkout successful emails were not set up. This fixed the issue with the development webhook. This did not seem to impact the deployed version though. Upon further inspection, it appeared to be a migration issue. A change made after my initial Postgres migration had not been migrated over. 
+
+- This updated migration raised a new issue as it impacted the existing database in the Heroku app. Issues included the superuser not being able to delete items from the shop, users from the store, orders in the django Admin site, etc. Edits could be made, but nothing could be deleted and the delete button in the site threw a 500 error. The Postgres Database had to be reset and all Heroku migrations done again from scratch. This resolved this issue.
+
+- After much searching, the problem with the totals not populating in the checkout success page (nor the admin orders section) turned out to be both a signals issue, and conflicting data types in line 52 of models.py. Upon adding `weak=False` to the signals, and updating the apps.py to import the signals. In checkout/models.py, the self.order_total was converted to a float to fix the conflicting data types issue.
+
+- Adjusting the quantity of an item with colour options in the bag was causing an error. This I was unable to fix in time, so the quntity adjust function was removed from the bag. The Delete button remains. The obvious issue here is that if a user wants to reduce the amount of an item, they will have to delete and return to shop. This is currently better than the colour selections disappearing with any bag adjustments though and I felt it best to redo the bag this way.
 
 While some bugs were fixed in time, in particular, migration issues with the Postgres Database and webhook handler issues, many still would not work and were causing sitewide bugs. As such, many of the user stories I wished to manage have not been successful.
 
@@ -93,8 +100,7 @@ While some bugs were fixed in time, in particular, migration issues with the Pos
 ## Future updates to include:
 Classes and categories of classes. 
 A review section in each class only to be modified by people who have purchased that class.
-Fixing the items_by_colour bug.
-Fixing the order total/subtotal bug.
+Making adjustments for a more seamless user experience on smaller and mid size screens
 
 
 # Deployment
@@ -178,7 +184,7 @@ Set up a group related to your project, with a User in the group.
 Return to the app bucket, inside, create a folder called media. Upload all project images here.
 
 In settings.py 
-'if 'USE_AWS' in os.environ:
+`if 'USE_AWS' in os.environ:
 
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
@@ -200,7 +206,7 @@ In settings.py
     # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-'
+`
 In Heroku, remove DISABLE_COLLECTSTATIC as a variable. 
 
 Add commit and push project from Gitpod (or your IDE). The app should now have the static files and media available on the web service.
@@ -219,7 +225,17 @@ Add commit and push project from Gitpod (or your IDE). The app should now have t
 
 - Paste the URL and click OK
 
-- Create an env.py file (or set environment variables if preferred), with the settings to match the config vars above. Remember to send to .gitignore to keep sensitive information private.
+- In the terminal type `pip install -r requirements.txt`
+
+- Create an env.py file (or set environment variables if preferred), with the settings to match the config vars above. For development, make the required changes to settings.py, set debug to True and DATABASES to:
+
+`DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+    }`
+Remember to send env.py to .gitignore to keep sensitive information private.
 
 
 ## Media and Credits

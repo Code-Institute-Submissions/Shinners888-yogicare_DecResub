@@ -83,8 +83,14 @@ body {
 .nonHomePageContainer {
     padding-bottom: 80px;
 }
+.cardContainer {
+    display: flex;
+    justify-content: center;
+}
 .card {
     margin: 10px 0;
+    max-width: 300px;
+    
 }
 .card-body {
     background: #FEFBEA;
@@ -130,11 +136,7 @@ body {
     color: #FEFBEA;
     text-align: center;
 }
-@media (min-width: 587px) {
-    .imageSizing {
-        max-width: 300px;
-    }
-}
+
 @media (min-width: 992px) {
     body {
         background: url("/media/outdooryoga.jpg") no-repeat right fixed;
