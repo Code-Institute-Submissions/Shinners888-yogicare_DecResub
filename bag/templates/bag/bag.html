@@ -49,11 +49,11 @@
                         <tr>
                             {% if product.item.image %}
                             <td class="p-3 d-none d-md-block">
-                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}{{ product.item.image }}" alt="{{ product.item.name }}">
+                                <img class="img-fluid rounded imageSizing" src="{{ MEDIA_URL }}{{ product.item.image }}" alt="{{ product.item.name }}">
                             </td>
                             {% else %}
-                            <td class="p-3 w-2 d-none d-md-block">
-                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}imagenotavailable.png" alt="{{ product.item.name }}">
+                            <td class="p-3 d-none d-md-block">
+                                <img class="img-fluid rounded imageSizing" src="{{ MEDIA_URL }}imagenotavailable.png" alt="{{ product.item.name }}">
                             </td>
                             {% endif %}
                             <td class="py-5">
