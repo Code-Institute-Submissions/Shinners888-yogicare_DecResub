@@ -57,13 +57,13 @@
                             </td>
                             {% endif %}
                             <td class="py-5">
-                                <p class="mx-auto"><strong>{{ product.item.friendly_name }} - ({% if product.item.colours %}{{ product.colour|upper }}{% endif %})</strong></p>
+                                <p class="mx-auto"><strong>{{ product.item.friendly_name }}{% if product.item.colours %} - ({{ product.colour|upper }}){% endif %}</strong></p>
                             </td>
                             <td class="py-5">
                                 <p class="my-0">${{ product.item.price }}</p>
                             </td>
                             <td class="py-5">
-                                <p class="my-0">{{ product.quantity }}</p>
+                                <p class="my-0"><strong>x{{ product.quantity }}</strong></p>
                             </td>
                             <td class="py-5">
                                 <p class="my-0">${{ product.item.price | calc_subtotal:product.quantity }}</p>
