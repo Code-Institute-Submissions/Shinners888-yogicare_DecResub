@@ -61,18 +61,27 @@ Apps:
 
 
 Due to significant bugs in the development process, the 'classes' app had to be removed at deployment.
-Remaining bugs include:
-- Colours vs items in bag. Items with colour options are not functionally specified in the cart. - Solved
+
+
+### Major solved bugs include:
+
 - Subtotal and quantity not displaying properly in bag template or successful checkout template. - Solved
-- Search bar not working outside development environment. - Removed
+
+After much searching, the problem with the totals not populating in the checkout success page (nor the admin orders section) turned out to be both a signals issue, and conflicting data types in line 52 of models.py. Upon adding `weak=False` to the signals, and updating the apps.py to import the signals. In checkout/models.py, the self.order_total was converted to a float to fix the conflicting data types issue.
+
+- Colours vs items in bag. Items with colour options are not functionally specified in the cart. - Mostly Solved, see remaining bugs.
 
 - An unnoted bug in the last submission of the project was that upon payment in the deployed app, the app was returning an error 500. At first this appeared to be a browser issue as not everyone was experiencing the issue, and the issue did not happen in the development version. Various issues played a role in this. I had failed to note that one of my webhooks was failing. This was partially due to the fact that the checkout successful emails were not set up. This fixed the issue with the development webhook. This did not seem to impact the deployed version though. Upon further inspection, it appeared to be a migration issue. A change made after my initial Postgres migration had not been migrated over. 
 
 - This updated migration raised a new issue as it impacted the existing database in the Heroku app. Issues included the superuser not being able to delete items from the shop, users from the store, orders in the django Admin site, etc. Edits could be made, but nothing could be deleted and the delete button in the site threw a 500 error. The Postgres Database had to be reset and all Heroku migrations done again from scratch. This resolved this issue.
 
-- After much searching, the problem with the totals not populating in the checkout success page (nor the admin orders section) turned out to be both a signals issue, and conflicting data types in line 52 of models.py. Upon adding `weak=False` to the signals, and updating the apps.py to import the signals. In checkout/models.py, the self.order_total was converted to a float to fix the conflicting data types issue.
+### Remaining bugs include:
 
-- Adjusting the quantity of an item with colour options in the bag was causing an error. This I was unable to fix in time, so the quntity adjust function was removed from the bag. The Delete button remains. The obvious issue here is that if a user wants to reduce the amount of an item, they will have to delete and return to shop. This is currently better than the colour selections disappearing with any bag adjustments though and I felt it best to redo the bag this way.
+- Search bar not working outside development environment. - Removed
+- Items with colours in bag. While they appear on separate lines, deleting one colour will delete all instances of that item - NOT SOLVED
+
+Adjusting/deleting the quantity of an item with colour options in the bag was causing an error. This I was unable to fix in time, so the quntity adjust function was removed from the bag. The Delete button remains. The obvious issue here is that if a user wants to reduce the amount of an item, they will have to delete and return to shop. This is currently better than the colour selections disappearing with any bag adjustments though and I felt it best to redo the bag this way.
+
 
 While some bugs were fixed in time, in particular, migration issues with the Postgres Database and webhook handler issues, many still would not work and were causing sitewide bugs. As such, many of the user stories I wished to manage have not been successful.
 
